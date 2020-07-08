@@ -1,0 +1,78 @@
+﻿@page "/"
+
+
+<div class="row">
+    <div class="col py-5 px-3">
+        <h1 class="text-center">Image Highlighter</h1>
+    </div>
+</div>
+<HighlightImg ImageSrc="/img/landscape.jpg" Items="SpringBlossomItems"></HighlightImg>
+<HighlightImg ImageSrc="/img/Livingroom1.webp" Items="Livingroom1Items"></HighlightImg>
+
+@code {
+    public List<HighlightItem> SpringBlossomItems { get; set; } = new List<HighlightItem>();
+    public List<HighlightItem> Livingroom1Items { get; set; } = new List<HighlightItem>();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        SpringBlossomItems.Add(new HighlightItem
+        {
+            Header = "Mountain range",
+            Text = "The mountains are popular for hikers.",
+            Active = false,
+            LinkUrl = "https://google.com",
+            Dot = new RelativePosition(80, 20),
+            Position = new RelativePosition(70, 25)
+        });
+        SpringBlossomItems.Add(new HighlightItem
+        {
+            Header = "Cherry blossom",
+            Text = "This cherry blossom tree is worth a visit in spring.",
+            Active = false,
+            LinkUrl = "https://google.com",
+            Dot = new RelativePosition(20, 20),
+            Position = new RelativePosition(20, 30)
+        });
+        SpringBlossomItems.Add(new HighlightItem
+        {
+            Header = "Food market",
+            Text = "Buy vegetables and meat from your local farmers.",
+            Active = false,
+            LinkUrl = "https://google.com",
+            Dot = new RelativePosition(13, 70),
+            Position = new RelativePosition(14, 60)
+        });
+
+
+        Livingroom1Items.Add(new HighlightItem
+        {
+            Header = "Strandmon",
+            Text = "Öronlappsfotölj, 1 995 SEK",
+            Active = false,
+            LinkUrl = "https://www.ikea.com/se/sv/p/strandmon-oeronlappsfatoelj-nordvalla-moerkgra-20343224/",
+            Dot = new RelativePosition(20, 50),
+            Position = new RelativePosition(20, 52)
+        });
+        Livingroom1Items.Add(new HighlightItem("Aröd", "Golv/läslampa, 499 SEK", "https://www.ikea.com/se/sv/p/aroed-golv-laeslampa-moerkgra-antracit-30389099/",
+            55, 35, positionPreference: "bottom"));
+        Livingroom1Items.Add(new HighlightItem("Kragsta", "Soffbord, 995 SEK", "https://www.ikea.com/se/sv/p/kragsta-soffbord-vit-20286638/",
+    55, 35, positionPreference: "right"));
+        Livingroom1Items.Add(new HighlightItem(
+            "Tärnaby",
+            "Bordslampa, 249 SEK",
+            "https://www.ikea.com/se/sv/p/taernaby-bordslampa-svart-antracit-60323894/",
+            60,
+            53,
+            positionPreference: "bottom"));
+        Livingroom1Items.Add(new HighlightItem(
+            "Hårte",
+            "LED arbetslampa, 149 SEK",
+            "https://www.ikea.com/se/sv/p/harte-led-arbetslampa-svart-silverfaergad-40266984/",
+            22,
+            71,
+            positionPreference: "right"));
+    }
+
+
+}
